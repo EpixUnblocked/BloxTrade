@@ -1,2 +1,2 @@
 # BloxTrade
-BloxTrade is a Roblox trading platform for limited items, no real or ingame currencey is used and only limited items are traded/provided.
+BloxTrade is a Roblox limited-item trading platform built for collectors and traders. The platform uses no real-world or in-game currency users exclusively trade Roblox limited items. In addition to direct item-for-item trading, BloxTrade also offers optional chance-based minigames where users may risk their own limited items for a chance to win others. All participation is voluntary, and users are responsible for choosing whether to take part in these item-risk activities.
