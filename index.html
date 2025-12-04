@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloxTrade - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 20%;
+            animation-delay: 0s;
+            animation-duration: 10s;
+        }
+
+        .particle:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(3) {
+            top: 40%;
+            left: 40%;
+            animation-delay: 4s;
+            animation-duration: 14s;
+        }
+
+        .particle:nth-child(4) {
+            top: 80%;
+            left: 10%;
+            animation-delay: 1s;
+            animation-duration: 11s;
+        }
+
+        .particle:nth-child(5) {
+            top: 10%;
+            left: 70%;
+            animation-delay: 3s;
+            animation-duration: 13s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+                opacity: 0.7;
+            }
+        }
+
+        /* Main container */
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        /* Logo/Title */
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .logo-highlight {
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tagline */
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Coming Soon text */
+        .coming-soon {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        /* Description */
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 0.85;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 100px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .loading::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(350%);
+            }
+        }
+
+        /* Decorative elements */
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            animation: fadeIn 2.5s ease-out;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            animation: bounce 2s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .icon:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .icon:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .icon:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .coming-soon {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1 class="logo">Blox<span class="logo-highlight">Trade</span></h1>
+        <p class="tagline">The Ultimate Roblox Trading Platform</p>
+        
+        <h2 class="coming-soon">Coming Soon</h2>
+        
+        <p class="description">
+            We're working hard to bring you the best Roblox trading experience.<br>
+            Trade items, discover rare collectibles, and connect with fellow traders.
+        </p>
+
+        <div class="loading"></div>
+
+        <div class="icon-container">
+            <div class="icon" role="img" aria-label="Gaming controller">🎮</div>
+            <div class="icon" role="img" aria-label="Diamond">💎</div>
+            <div class="icon" role="img" aria-label="Fire">🔥</div>
+        </div>
+    </div>
+</body>
+</html>
